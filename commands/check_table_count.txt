@@ -1,0 +1,7 @@
+sudo su - oracle -c "sqlplus -s / as sysdba <<EOF
+alter session set container = xepdb1;
+set heading off;
+set feedback off;
+select count(*) from {schema}.{table};
+exit;
+EOF"

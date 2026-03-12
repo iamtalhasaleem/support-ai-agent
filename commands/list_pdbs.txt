@@ -1,0 +1,8 @@
+sudo su - oracle -c "sqlplus -s / as sysdba <<'EOF'
+set heading off;
+set feedback off;
+set pagesize 0;
+set linesize 100;
+SELECT PDB_NAME FROM DBA_PDBS WHERE PDB_NAME != 'PDB\$SEED';
+exit;
+EOF"
